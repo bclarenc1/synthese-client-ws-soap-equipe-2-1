@@ -8,26 +8,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.infotel.wssoap.Magasin;
+import com.infotel.wssoap.Perissable;
 import com.infotel.wssoap.ProduitSOAPService;
 import com.infotel.wssoap.ProduitSOAPServiceProxy;
 
 /**
- * Servlet implementation class GestionMagasins
+ * Servlet implementation class GestionNonPerissables
  */
-@WebServlet("/GestionMagasins")
-public class GestionMagasins extends HttpServlet {
+@WebServlet("/GestionNonPerissables")
+public class GestionNonPerissables extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public GestionMagasins() {}
+    public GestionNonPerissables() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
-		Magasin[] magasins = service.getAllMagasins();
-		request.setAttribute("magasins", magasins);
-		System.out.println(magasins);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	
+		// getAttribute des params du nonperissable
+//		NonPerissable np = service.addNonPerissable();
+//		request.setAttribute("nonperissable", np);
+//		System.out.println(np);
+//		request.getRequestDispatcher("index.jsp").forward(request, response);
+//	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,8 +36,3 @@ public class GestionMagasins extends HttpServlet {
 	}
 
 }
-
-
-
-
-

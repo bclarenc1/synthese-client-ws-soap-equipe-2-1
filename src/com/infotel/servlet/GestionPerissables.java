@@ -1,33 +1,32 @@
 package com.infotel.servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.infotel.wssoap.Magasin;
 import com.infotel.wssoap.ProduitSOAPService;
 import com.infotel.wssoap.ProduitSOAPServiceProxy;
 
 /**
- * Servlet implementation class GestionMagasins
+ * Servlet implementation class GestionPerissables
  */
-@WebServlet("/GestionMagasins")
-public class GestionMagasins extends HttpServlet {
+@WebServlet("/GestionPerissables")
+public class GestionPerissables extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public GestionMagasins() {}
+    
+    public GestionPerissables() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
-		Magasin[] magasins = service.getAllMagasins();
-		request.setAttribute("magasins", magasins);
-		System.out.println(magasins);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	
+		// getAttribute des params du perissable
+//		Perissable pe = service.addPerissable();
+//		request.setAttribute("perissables", pe);
+//		System.out.println(pe);
+//		request.getRequestDispatcher("index.jsp").forward(request, response);
+//	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,8 +34,3 @@ public class GestionMagasins extends HttpServlet {
 	}
 
 }
-
-
-
-
-
