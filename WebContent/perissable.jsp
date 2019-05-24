@@ -9,7 +9,7 @@
 <title>Page title \o/</title>
 </head>
 
-<body>
+<body> 
 	<h2>CRUD Produits Non Périssables</h2>
 
 	<form action="GestionPerissables" method="GET" id="form-contact" class="container">
