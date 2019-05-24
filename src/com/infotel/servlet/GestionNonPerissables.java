@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.infotel.wssoap.Perissable;
+import com.infotel.wssoap.Produit;
 import com.infotel.wssoap.ProduitSOAPService;
 import com.infotel.wssoap.ProduitSOAPServiceProxy;
 
@@ -23,12 +23,12 @@ public class GestionNonPerissables extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
-		// getAttribute des params du nonperissable
-//		NonPerissable np = service.addNonPerissable();
-//		request.setAttribute("nonperissable", np);
-//		System.out.println(np);
-//		request.getRequestDispatcher("index.jsp").forward(request, response);
-//	
+//		 getAttribute des params du nonperissable
+		Produit[] produits = service.getAllProduits();
+		request.setAttribute("produits", produits);
+		System.out.println("\n\n\n\n\t qzifjmzeijrmsijf;wriaqfj;moirqwfosjfiw;soijvoijr \n\n\n\n");
+		System.out.println(produits);
+		request.getRequestDispatcher("test.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
