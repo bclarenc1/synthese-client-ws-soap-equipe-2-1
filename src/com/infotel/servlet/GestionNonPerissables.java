@@ -28,7 +28,7 @@ public class GestionNonPerissables extends HttpServlet {
 //		request.setAttribute("nonperissable", np);
 //		System.out.println(np);
 //		request.getRequestDispatcher("index.jsp").forward(request, response);
-//	
+//	 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
