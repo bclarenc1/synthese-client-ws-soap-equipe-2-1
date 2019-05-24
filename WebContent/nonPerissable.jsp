@@ -7,10 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
 <title>CRUD non périssable</title>
 </head>
 
-<body>
+<body id="pinkbg">
 
 	<h2>CRUD produits non périssables</h2>
 
@@ -38,7 +40,7 @@
 	</form>
 
 	<div class="container">
-		<h2>Tous les produit de la BDD</h2>
+		<h2>Tous les produits de la BDD</h2>
 		<table class="table table-bordered table-sm">
 			<thead class=greenrow>
 				<tr>
@@ -64,6 +66,9 @@
 				</c:if>
 			</tbody>
 		</table>
+		<p> Il faudrait créer/appeler une méthode getAllNonPerissables(), là on a tous les produits donc "Modifier" sur les périssables renvoie une erreur.</p> 
+		<p> "Modifier" ne marche de toute façon pas encore </p>
+		<p> Le CSS non plus :(</p>
 	</div>
 
 </body>

@@ -12,10 +12,7 @@ import com.infotel.wssoap.Magasin;
 import com.infotel.wssoap.ProduitSOAPService;
 import com.infotel.wssoap.ProduitSOAPServiceProxy;
 
-/**
- * Servlet implementation class GestionMagasins
- */
-@WebServlet("/GestionMagasins")
+@WebServlet("/AjouterMagasin")
 public class AjouterMagasin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -23,10 +20,20 @@ public class AjouterMagasin extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
+		
+		if (request.getParameter("nomMagasin") != null) {
+
+			String nomMagasin = request.getParameter("nomMagasin");
+			int codeMagasin = Integer.parseInt(request.getParameter("codeMagasin"));
+			double prixLocal = Double.parseDouble(request.getParameter("prixLocal"));
+					
+			service.addMagasin(nomMagasin, codeMagasin, prixLocal);
+		}
+		
 		Magasin[] magasins = service.getAllMagasins();
 		request.setAttribute("magasins", magasins);
 		System.out.println(magasins);
-		request.getRequestDispatcher("accueil.jsp").forward(request, response);
+		request.getRequestDispatcher("magasin.jsp").forward(request, response);
 	
 	}
 
