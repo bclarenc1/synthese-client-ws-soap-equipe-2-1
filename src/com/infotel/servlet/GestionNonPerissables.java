@@ -23,12 +23,12 @@ public class GestionNonPerissables extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
-//		 getAttribute des params du nonperissable
-		Produit[] produits = service.getAllProduits();
-		request.setAttribute("produits", produits);
-		System.out.println("\n\n\n\n\t qzifjmzeijrmsijf;wriaqfj;moirqwfosjfiw;soijvoijr \n\n\n\n");
-		System.out.println(produits);
-		request.getRequestDispatcher("test.jsp").forward(request, response);
+		// getAttribute des params du nonperissable
+//		Produit[] produits = service.getAllProduits();
+//		request.setAttribute("produits", produits);
+//		System.out.println("\n\n\n\n\t qzifjmzeijrmsijf;wriaqfj;moirqwfosjfiw;soijvoijr \n\n\n\n");
+//		System.out.println(produits);
+//		request.getRequestDispatcher("test.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
